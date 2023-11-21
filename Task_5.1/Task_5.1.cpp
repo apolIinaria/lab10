@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main()
+int main() 
 {
 	double x, y;
 
@@ -14,16 +14,19 @@ int main()
 	cout << "Введіть значення у: ";
 	cin >> y;
 
-	double part1 = sqrt((x + 2) / (3 * y + 1));
-	double part2 = ((8 * pow(x, 2) + 3) / (1 - 9 * pow(y, 2))) * ((x + 0.5) / (9 * y + 3));
-
-	if (3 * y + 1 == 0 || 1 - 9 * pow(y, 2) == 0 || 9 * y + 3 == 0)
+	if (x <= -2 || x <= -0.5)
 	{
-		cout << "Помилка" << endl;
+		cout << "Недопустиме значення х" << endl;
 	}
-	else
+	else if (y <= -(1/3))
 	{
-		double result = part1 + part2;
+		cout << "Недопустиме значення у" << endl;
+	}
+	else 
+	{
+		double result = sqrt((x + 2) / (3 * y + 1)) + ((8 * pow(x, 2) + 3) / (1 - 9 * pow(y, 2))) * ((x + 0.5) / (9 * y + 3));
 		cout << "Значення виразу: " << result << endl;
 	}
+
+	return 0;
 }
